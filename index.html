@@ -17,13 +17,15 @@
         <!-- input and button it add a new item -->
         <div>
             <div id="time" ng-model="input"></div>
+            <div id="starttime"></div>
             <!--<input type="text" ng-model="input"> -->
             <button type="submit" ng-click="add()">Record</button>
         </div>
         <!-- list of items with a button to remove that item -->
         <ul>
             <li ng-repeat="time in times">
-                 {{time}}<button ng-click="remove($index)">delete</button>
+                 {{time}}
+                 <button ng-click="remove($index)">delete</button>
             </li>
         </ul>
 
