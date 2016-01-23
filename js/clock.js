@@ -32,7 +32,7 @@ function checkTime(i) {
 }
 function checkTimemi(i) {
     if ( i < 10) { i = "0" + "0" + i};
-    if ( 10<= i < 100) {i = "0" + i};  // add zero in front of numbers < 10
+     if (i < 100 && i >=10) {i = "0" + i}; // add zero in front of numbers < 10
 
     return i;
 }
