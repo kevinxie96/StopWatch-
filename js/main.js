@@ -1,6 +1,7 @@
 //clock
 window.onload = function() {
   startTime();
+  startTimea();
 };
 
 
