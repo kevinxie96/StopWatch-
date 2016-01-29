@@ -1,15 +1,3 @@
-function startTimea() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    var mi = today.getMilliseconds();
-    h = checkTime (h);
-    m = checkTime(m);
-    s = checkTime(s);
-    mi = checkTimemi(mi);
-     document.getElementById('starttime').innerHTML =  h + ":" + m + ":" + s + ":" + mi;
-}
 
 function startTime() {
     var today = new Date();
@@ -26,6 +14,7 @@ function startTime() {
 
     var t = setTimeout(startTime, 1);
 }
+
 function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
