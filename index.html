@@ -15,40 +15,40 @@
     <script src="js/clock.js"></script>
   </head>
   <body>
-    <div class="row" ng-controller="itemController">
-      <h1 class="greeting">Hello, {{ yourName }}!</h1>
+ <body>
+    <div class="row" ng-controller="itemController" ng-cloak>
       <div class="col-md-4 col-md-offset-4">
-        <span class="s1"><div class="splash fade-in">
-        </span>
-          <h1 class="splash-title fade-in">
-            The Revolution of Time :)
-          </h1>
-          <h2 class="splash-title fade-in">
-            Enter your name:
-          </h2>
-          <a href="#" class="splash-arrow fade-in">
-            <img src="img/down-arrow.png" alt="" />
-          </a>
-          <input class="splash-title fade-in input-text" type="text" ng-model="yourName">
-        </div>
+        <input type="text" ng-model="yourName" placeholder="Enter a name here">
+        <h1>Hello {{ yourName }}!</h1>
         <!-- input and button it add a new item -->
-        <div>
-            <div id="time" ng-model="input" class="time-digits"></div>
-            <div id="starttime"></div>
+   
+            <div id="time" ng-model="input"></div>
+
+             <div id="starttime" ng-model = "input"></div>
+            <form name="d" style = "margin: 3px 0px 10px 0px">
+            <input type="text" size="8" name="d2">
+            </form>
             <!--<input type="text" ng-model="input"> -->
-            <button type="submit" ng-click="add()">
-              Record
-            </button>
-        </div>
+            <button type="submit" ng-click="add()">Record</button>
+            <br>
+
         <!-- list of items with a button to remove that item -->
-        <ul>
-            <li ng-repeat="time in times">
+      
+        <ul style = "float: left">
+            <li style = "margin: 0px 0px 5px 0px" ng-repeat="time in times">
                  {{time}}
-                 <button ng-click="remove($index)">
-                   delete
-                 </button>
+                  <button ng-click="remove($index)">delete</button>
             </li>
-        </ul>
+         </ul>
+         <ul style = "float: left">
+            <li style = "margin: 0px 0px 5px 0px" ng-repeat = "elapsed in t_elapsed">
+                Time Elapsed: {{elapsed}}
+                <button ng-click="remove($index)">delete</button>
+            </li>
+         </ul>
+        
+      </div>
+    </div>
 
       </div>
     </div>
