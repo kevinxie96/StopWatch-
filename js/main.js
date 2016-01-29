@@ -15,25 +15,39 @@ $(document).ready(function() {
 
 window.onload = function() {
   startTime();
-  startTimea();
+  reference();
+  elapsed();
 };
 
 
-var myApp = angular.module('myApp',[]);
 
-myApp.controller('itemController', ['$scope', function($scope) {
+angular.module('myApp',[])
+
+.controller('itemController', ['$scope',  function($scope) {
   //testing...
-  $scope.testing = 'wassup!';
+ 
   //array of times
   $scope.times = [];
+
   //add time
+  $scope.t_elapsed = [];
+
+
   $scope.add = function() {
-      time = document.getElementById('time').innerHTML
+      var time = document.getElementById('time').innerHTML;
       $scope.times.push(time);
       $scope.input = '';
+      var elapsed = document.d.d2.value;
+      $scope.t_elapsed.push(elapsed);
+
   };
     // remove an item
   $scope.remove = function(index) {
     $scope.times.splice(index, 1);
+    $scope.t_elapsed.splice(index, 1);
   };
+
+
+
 }]);
+
