@@ -12,44 +12,70 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/directve.js"></script>
     <script src="js/clock.js"></script>
   </head>
   <body>
- <body>
+  <body>
     <div class="row" ng-controller="itemController" ng-cloak>
       <div class="col-md-4 col-md-offset-4">
         <input type="text" ng-model="yourName" placeholder="Enter a name here">
         <h1>Hello {{ yourName }}!</h1>
         <!-- input and button it add a new item -->
-   
-            <div id="time" ng-model="input"></div>
-
-             <div id="starttime" ng-model = "input"></div>
-            <form name="d" style = "margin: 3px 0px 10px 0px">
+          <div id="time" ng-model="input"></div>
+          <div id="starttime" ng-model = "input"></div>
+          <form name="d" style = "margin: 3px 0px 10px 0px">
             <input type="text" size="8" name="d2">
-            </form>
+          </form>
             <!--<input type="text" ng-model="input"> -->
-            <button type="submit" ng-click="add()">Record</button>
-            <br>
+          <button type="submit" ng-click="add()">Record</button>
+          <br>
 
         <!-- list of items with a button to remove that item -->
-      
+
         <ul style = "float: left">
             <li style = "margin: 0px 0px 5px 0px" ng-repeat="time in times">
-                 {{time}}
-                  <button ng-click="remove($index)">delete</button>
+                {{time}}
+                <button ng-click="remove($index)">delete</button>
             </li>
          </ul>
-         <ul style = "float: left">
+        <ul style = "float: left">
             <li style = "margin: 0px 0px 5px 0px" ng-repeat = "elapsed in t_elapsed">
                 Time Elapsed: {{elapsed}}
                 <button ng-click="remove($index)">delete</button>
             </li>
-         </ul>
-        
+        </ul>
       </div>
     </div>
-
+    <div class="footer">
+      <p>Practice using Angular.js Service</p>
+      <div ng-controller="ContactController">
+          <form>
+          <label>Name</label>
+              <input type="text" name="name" ng-model="newcontact.name"/>
+          <label>Email</label>
+              <input type="text" name="email" ng-model="newcontact.email"/>
+          <label>Phone</label>
+              <input type="text" name="phone" ng-model="newcontact.phone"/>
+              <br/>
+              <input type="hidden" ng-model="newcontact.id" />
+           <input type="button" value="Save" ng-click="saveContact()" />
+          </form>
+      <table>
+      <thead>
+      </thead>
+      <tbody>
+      <tr ng-repeat="contact in contacts">
+          <td>{{ contact.name }}</td>
+          <td>{{ contact.email }}</td>
+          <td>{{ contact.phone }}</td>
+          <td>
+              <a  href="#" ng-click="edit(contact.id)">edit</a> |
+              <a href="#" ng-click="delete(contact.id)">delete</a>
+          </td>
+       </tr>
+      </tbody>
+      </table>
       </div>
     </div>
   </body>

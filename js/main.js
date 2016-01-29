@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 });
 
-
+//possible use ng-init?
 window.onload = function() {
   startTime();
   reference();
@@ -21,11 +21,11 @@ window.onload = function() {
 
 
 
-angular.module('myApp',[])
+var module = angular.module('myApp',[]);
 
-.controller('itemController', ['$scope',  function($scope) {
+module.controller('itemController', ['$scope',  function($scope) {
   //testing...
- 
+
   //array of times
   $scope.times = [];
 
@@ -51,3 +51,6 @@ angular.module('myApp',[])
 
 }]);
 
+module.service('userService', function(){
+    this.users = ['John', 'James', 'Jake'];
+});
