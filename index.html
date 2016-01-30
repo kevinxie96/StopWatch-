@@ -40,23 +40,22 @@
 
         <!-- list of items with a button to remove that item -->
         <div>
-        <ul style =  "float: left">
-            <li style = "margin: 0px 0px 5px 0px" ng-repeat="time in getTimes()">
+            <ul style =  "float: left">
+              <li style = "margin: 0px 0px 5px 0px" ng-repeat="time in getTimes()">
                  
                 {{time}}
                 <button ng-click="remove($index)">delete</button>
           
-            </li>
-        </ul>
-        <ul style = "position: relative; float: left">
-            <li style = "margin: 0px 0px 5px 0px" ng-repeat = "elapsed in getElapsed()">
+              </li>
+            </ul>
+            <ul style = "position: relative; float: left">
+              <li style = "margin: 0px 0px 5px 0px" ng-repeat = "elapsed in getElapsed()">
               
                 Time Elapsed: {{elapsed}} seconds
                 <button ng-click="remove($index)">delete</button>
                 
-            </li>
-            
-       </ul>
+              </li>
+            </ul>
        </div>
      </div>
   </div>
