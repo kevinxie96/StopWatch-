@@ -23,30 +23,18 @@ window.onload = function() {
 
 var module = angular.module('myApp',[]);
 
-module.controller('itemController', ['$scope',  function($scope) {
+module.controller('itemController', ['$scope', 'clockservice', function($scope, clockservice) {
   //testing...
-
+ 
   //array of times
-  $scope.times = [];
 
-  //add time
-  $scope.t_elapsed = [];
+ $scope.getTimes = clockservice.getTimes;
+ $scope.getElapsed = clockservice.getElapsed;
 
+  
 
-  $scope.add = function() {
-      var time = document.getElementById('time').innerHTML;
-      $scope.times.push(time);
-      $scope.input = '';
-      var elapsed = document.d.d2.value;
-      $scope.t_elapsed.push(elapsed);
-
-  };
     // remove an item
-  $scope.remove = function(index) {
-    $scope.times.splice(index, 1);
-    $scope.t_elapsed.splice(index, 1);
-  };
-
+  $scope.remove = clockservice.remove;
 
 
 }]);
